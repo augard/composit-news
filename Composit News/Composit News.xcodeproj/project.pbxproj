@@ -32,6 +32,7 @@
 		8095A5F425E700CF0090DD18 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5F325E700CF0090DD18 /* AppViewController.swift */; };
 		8095A5F825E700F70090DD18 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5F725E700F70090DD18 /* BaseViewController.swift */; };
 		8095A5FB25E701080090DD18 /* ComposibleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5FA25E701080090DD18 /* ComposibleController.swift */; };
+		8095A5FF25E7028E0090DD18 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5FE25E7028E0090DD18 /* Article.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		8095A5F325E700CF0090DD18 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		8095A5F725E700F70090DD18 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8095A5FA25E701080090DD18 /* ComposibleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposibleController.swift; sourceTree = "<group>"; };
+		8095A5FE25E7028E0090DD18 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				8095A5EC25E6FECB0090DD18 /* API+Articles.swift */,
+				8095A5FE25E7028E0090DD18 /* Article.swift */,
 				8095A5F025E6FF1C0090DD18 /* ArticleServices.swift */,
 			);
 			path = Articles;
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8095A5FF25E7028E0090DD18 /* Article.swift in Sources */,
 				8095A5E525E6FA670090DD18 /* RouterError.swift in Sources */,
 				8095A5E125E6F9200090DD18 /* Swift.Error.swift in Sources */,
 				8095A5D025E6F61D0090DD18 /* Router.swift in Sources */,

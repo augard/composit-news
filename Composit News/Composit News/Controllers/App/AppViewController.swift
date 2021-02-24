@@ -13,6 +13,8 @@ class AppViewController: BaseViewController<AppState, AppAction> {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.systemBlue
+
+        viewStore.send(.displayMain(.init()))
     }
 
 }

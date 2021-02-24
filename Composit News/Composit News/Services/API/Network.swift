@@ -14,8 +14,6 @@ typealias NetworkResponse<Value, Error> = (_ response: Result<Value, Error>) -> 
 protocol Networking: class {
 
     var session: URLSession { get }
-
-    var dateFormatter: DateFormatter { get }
     var decoder: JSONDecoder { get }
 
     func doRequest<V>(request: Request) -> AnyPublisher<V, ResponseError> where V: Decodable
@@ -28,22 +26,16 @@ class Network: Networking {
 
     let session: URLSession
 
-    init() {
-        session = URLSession(configuration: .default)
-    }
-
-    var dateFormatter: DateFormatter {
-        let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar(identifier: .iso8601)
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        return dateFormatter
-    }
-
     var decoder: JSONDecoder {
         let jsonDecoder = JSONDecoder()
-        jsonDecoder.dateDecodingStrategy = .formatted(dateFormatter)
+        jsonDecoder.dateDecodingStrategy = .iso8601
         return jsonDecoder
+    }
+
+    private var cancellables: Set<AnyCancellable> = []
+
+    init() {
+        session = URLSession(configuration: .default)
     }
 
     func doRequest<V>(request: Request) -> AnyPublisher<V, ResponseError> where V: Decodable {
@@ -56,7 +48,8 @@ class Network: Networking {
                 return
             }
 
-            _ = self.session.dataTaskPublisher(for: urlRequest)
+            self.session.dataTaskPublisher(for: urlRequest)
+                .receive(on: DispatchQueue.main)
                 .tryMap { output -> Data in
                     guard let response = output.response as? HTTPURLResponse else {
                         throw ResponseError.noData
@@ -79,6 +72,7 @@ class Network: Networking {
                 }, receiveValue: { value in
                     promise(.success(value))
                 })
+                .store(in: &self.cancellables)
         }.tryCompactMap { response in
             switch response.result {
             case let .success(value):

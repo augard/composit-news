@@ -18,6 +18,7 @@ struct AppState: Equatable {
 enum AppAction: Equatable {
 
     case displayMain(MainAction)
+    case displayResult(Result<Articles, ResponseError>)
 
 }
 
@@ -50,7 +51,19 @@ let AppReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer.combine(
     Reducer { state, action, environment in
         switch action {
         case let .displayMain(action):
-            break
+            struct RequestID: Hashable, Equatable {
+                let id = UUID()
+            }
+
+            return environment.articleService.articles()
+                .receive(on: environment.mainQueue)
+                .catchToEffect()
+                .map(AppAction.displayResult)
+                .cancellable(id: RequestID(), cancelInFlight: true)
+        case let .displayResult(.success(articles)):
+            print("Success: \(articles)")
+        case let .displayResult(.failure(error)):
+            print("Failure: \(error)")
         }
         return .none
     }
