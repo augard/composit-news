@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8095A59125E6F38B0090DD18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A59025E6F38B0090DD18 /* AppDelegate.swift */; };
+		8095A59325E6F38B0090DD18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A59225E6F38B0090DD18 /* SceneDelegate.swift */; };
+		8095A59525E6F38B0090DD18 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A59425E6F38B0090DD18 /* MainViewController.swift */; };
+		8095A59A25E6F38C0090DD18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8095A59925E6F38C0090DD18 /* Assets.xcassets */; };
+		8095A59D25E6F38C0090DD18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8095A59B25E6F38C0090DD18 /* LaunchScreen.storyboard */; };
+		8095A5A825E6F4330090DD18 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8095A5A725E6F4330090DD18 /* ComposableArchitecture */; };
+		8095A5AC25E6F4400090DD18 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8095A5AB25E6F4400090DD18 /* SnapKit */; };
+		8095A5AF25E6F44A0090DD18 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5AE25E6F44A0090DD18 /* AppCore.swift */; };
+		8095A5B525E6F4E90090DD18 /* MainCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5B425E6F4E90090DD18 /* MainCore.swift */; };
+		8095A5BC25E6F5130090DD18 /* ArticleCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5BB25E6F5130090DD18 /* ArticleCore.swift */; };
+		8095A5BF25E6F51F0090DD18 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5BE25E6F51F0090DD18 /* ArticleViewController.swift */; };
+		8095A5C225E6F5270090DD18 /* ArticlesCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5C125E6F5270090DD18 /* ArticlesCore.swift */; };
+		8095A5C525E6F5300090DD18 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5C425E6F5300090DD18 /* ArticlesViewController.swift */; };
+		8095A5CD25E6F5D30090DD18 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5CC25E6F5D30090DD18 /* Network.swift */; };
+		8095A5D025E6F61D0090DD18 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5CF25E6F61D0090DD18 /* Router.swift */; };
+		8095A5D425E6F72E0090DD18 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5D325E6F72E0090DD18 /* Request.swift */; };
+		8095A5D825E6F89E0090DD18 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5D725E6F89E0090DD18 /* Response.swift */; };
+		8095A5DC25E6F8D40090DD18 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5DB25E6F8D40090DD18 /* ResponseError.swift */; };
+		8095A5E125E6F9200090DD18 /* Swift.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5E025E6F9200090DD18 /* Swift.Error.swift */; };
+		8095A5E525E6FA670090DD18 /* RouterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5E425E6FA670090DD18 /* RouterError.swift */; };
+		8095A5ED25E6FECB0090DD18 /* API+Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5EC25E6FECB0090DD18 /* API+Articles.swift */; };
+		8095A5F125E6FF1C0090DD18 /* ArticleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5F025E6FF1C0090DD18 /* ArticleServices.swift */; };
+		8095A5F425E700CF0090DD18 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5F325E700CF0090DD18 /* AppViewController.swift */; };
+		8095A5F825E700F70090DD18 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5F725E700F70090DD18 /* BaseViewController.swift */; };
+		8095A5FB25E701080090DD18 /* ComposibleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A5FA25E701080090DD18 /* ComposibleController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8095A58D25E6F38B0090DD18 /* Composit News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Composit News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8095A59025E6F38B0090DD18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8095A59225E6F38B0090DD18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8095A59425E6F38B0090DD18 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8095A59925E6F38C0090DD18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8095A59C25E6F38C0090DD18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8095A59E25E6F38C0090DD18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8095A5AE25E6F44A0090DD18 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
+		8095A5B425E6F4E90090DD18 /* MainCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCore.swift; sourceTree = "<group>"; };
+		8095A5BB25E6F5130090DD18 /* ArticleCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCore.swift; sourceTree = "<group>"; };
+		8095A5BE25E6F51F0090DD18 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		8095A5C125E6F5270090DD18 /* ArticlesCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCore.swift; sourceTree = "<group>"; };
+		8095A5C425E6F5300090DD18 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		8095A5CC25E6F5D30090DD18 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		8095A5CF25E6F61D0090DD18 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8095A5D325E6F72E0090DD18 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		8095A5D725E6F89E0090DD18 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		8095A5DB25E6F8D40090DD18 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		8095A5E025E6F9200090DD18 /* Swift.Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift.Error.swift; sourceTree = "<group>"; };
+		8095A5E425E6FA670090DD18 /* RouterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterError.swift; sourceTree = "<group>"; };
+		8095A5EC25E6FECB0090DD18 /* API+Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Articles.swift"; sourceTree = "<group>"; };
+		8095A5F025E6FF1C0090DD18 /* ArticleServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleServices.swift; sourceTree = "<group>"; };
+		8095A5F325E700CF0090DD18 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		8095A5F725E700F70090DD18 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8095A5FA25E701080090DD18 /* ComposibleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposibleController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8095A58A25E6F38B0090DD18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8095A5A825E6F4330090DD18 /* ComposableArchitecture in Frameworks */,
+				8095A5AC25E6F4400090DD18 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8095A58425E6F38B0090DD18 = {
+			isa = PBXGroup;
+			children = (
+				8095A58F25E6F38B0090DD18 /* Composit News */,
+				8095A58E25E6F38B0090DD18 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8095A58E25E6F38B0090DD18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8095A58D25E6F38B0090DD18 /* Composit News.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8095A58F25E6F38B0090DD18 /* Composit News */ = {
+			isa = PBXGroup;
+			children = (
+				8095A5CA25E6F5B40090DD18 /* Controllers */,
+				8095A5C925E6F5AC0090DD18 /* Services */,
+				8095A5DF25E6F9100090DD18 /* Extensions */,
+				8095A5B225E6F4B80090DD18 /* Supporting Files */,
+			);
+			path = "Composit News";
+			sourceTree = "<group>";
+		};
+		8095A5B125E6F4B10090DD18 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8095A5AE25E6F44A0090DD18 /* AppCore.swift */,
+				8095A59025E6F38B0090DD18 /* AppDelegate.swift */,
+				8095A5F325E700CF0090DD18 /* AppViewController.swift */,
+				8095A59225E6F38B0090DD18 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8095A5B225E6F4B80090DD18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8095A59925E6F38C0090DD18 /* Assets.xcassets */,
+				8095A59B25E6F38C0090DD18 /* LaunchScreen.storyboard */,
+				8095A59E25E6F38C0090DD18 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8095A5B725E6F4EC0090DD18 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8095A5B425E6F4E90090DD18 /* MainCore.swift */,
+				8095A59425E6F38B0090DD18 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8095A5BA25E6F4FE0090DD18 /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				8095A5C125E6F5270090DD18 /* ArticlesCore.swift */,
+				8095A5C425E6F5300090DD18 /* ArticlesViewController.swift */,
+				8095A5BB25E6F5130090DD18 /* ArticleCore.swift */,
+				8095A5BE25E6F51F0090DD18 /* ArticleViewController.swift */,
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
+		8095A5C925E6F5AC0090DD18 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8095A5CB25E6F5C10090DD18 /* API */,
+				8095A5EF25E6FF0F0090DD18 /* Articles */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8095A5CA25E6F5B40090DD18 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8095A5B125E6F4B10090DD18 /* App */,
+				8095A5B725E6F4EC0090DD18 /* Main */,
+				8095A5BA25E6F4FE0090DD18 /* Articles */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8095A5CB25E6F5C10090DD18 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8095A5CF25E6F61D0090DD18 /* Router.swift */,
+				8095A5E425E6FA670090DD18 /* RouterError.swift */,
+				8095A5D325E6F72E0090DD18 /* Request.swift */,
+				8095A5D725E6F89E0090DD18 /* Response.swift */,
+				8095A5DB25E6F8D40090DD18 /* ResponseError.swift */,
+				8095A5CC25E6F5D30090DD18 /* Network.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		8095A5DF25E6F9100090DD18 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8095A5E025E6F9200090DD18 /* Swift.Error.swift */,
+				8095A5FA25E701080090DD18 /* ComposibleController.swift */,
+				8095A5F725E700F70090DD18 /* BaseViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8095A5EF25E6FF0F0090DD18 /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				8095A5EC25E6FECB0090DD18 /* API+Articles.swift */,
+				8095A5F025E6FF1C0090DD18 /* ArticleServices.swift */,
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8095A58C25E6F38B0090DD18 /* Composit News */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8095A5A125E6F38C0090DD18 /* Build configuration list for PBXNativeTarget "Composit News" */;
+			buildPhases = (
+				8095A58925E6F38B0090DD18 /* Sources */,
+				8095A58A25E6F38B0090DD18 /* Frameworks */,
+				8095A58B25E6F38B0090DD18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Composit News";
+			packageProductDependencies = (
+				8095A5A725E6F4330090DD18 /* ComposableArchitecture */,
+				8095A5AB25E6F4400090DD18 /* SnapKit */,
+			);
+			productName = "Composit News";
+			productReference = 8095A58D25E6F38B0090DD18 /* Composit News.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8095A58525E6F38B0090DD18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					8095A58C25E6F38B0090DD18 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 8095A58825E6F38B0090DD18 /* Build configuration list for PBXProject "Composit News" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8095A58425E6F38B0090DD18;
+			packageReferences = (
+				8095A5A625E6F4330090DD18 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				8095A5AA25E6F4400090DD18 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = 8095A58E25E6F38B0090DD18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8095A58C25E6F38B0090DD18 /* Composit News */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8095A58B25E6F38B0090DD18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8095A59D25E6F38C0090DD18 /* LaunchScreen.storyboard in Resources */,
+				8095A59A25E6F38C0090DD18 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8095A58925E6F38B0090DD18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8095A5E525E6FA670090DD18 /* RouterError.swift in Sources */,
+				8095A5E125E6F9200090DD18 /* Swift.Error.swift in Sources */,
+				8095A5D025E6F61D0090DD18 /* Router.swift in Sources */,
+				8095A5D425E6F72E0090DD18 /* Request.swift in Sources */,
+				8095A5CD25E6F5D30090DD18 /* Network.swift in Sources */,
+				8095A5F825E700F70090DD18 /* BaseViewController.swift in Sources */,
+				8095A59525E6F38B0090DD18 /* MainViewController.swift in Sources */,
+				8095A5F425E700CF0090DD18 /* AppViewController.swift in Sources */,
+				8095A59125E6F38B0090DD18 /* AppDelegate.swift in Sources */,
+				8095A5FB25E701080090DD18 /* ComposibleController.swift in Sources */,
+				8095A5BF25E6F51F0090DD18 /* ArticleViewController.swift in Sources */,
+				8095A5D825E6F89E0090DD18 /* Response.swift in Sources */,
+				8095A5C525E6F5300090DD18 /* ArticlesViewController.swift in Sources */,
+				8095A5F125E6FF1C0090DD18 /* ArticleServices.swift in Sources */,
+				8095A5B525E6F4E90090DD18 /* MainCore.swift in Sources */,
+				8095A5AF25E6F44A0090DD18 /* AppCore.swift in Sources */,
+				8095A5C225E6F5270090DD18 /* ArticlesCore.swift in Sources */,
+				8095A59325E6F38B0090DD18 /* SceneDelegate.swift in Sources */,
+				8095A5BC25E6F5130090DD18 /* ArticleCore.swift in Sources */,
+				8095A5ED25E6FECB0090DD18 /* API+Articles.swift in Sources */,
+				8095A5DC25E6F8D40090DD18 /* ResponseError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8095A59B25E6F38C0090DD18 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8095A59C25E6F38C0090DD18 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8095A59F25E6F38C0090DD18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8095A5A025E6F38C0090DD18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8095A5A225E6F38C0090DD18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N448G4S8S9;
+				INFOPLIST_FILE = "Composit News/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.arat.Composit-News";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8095A5A325E6F38C0090DD18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N448G4S8S9;
+				INFOPLIST_FILE = "Composit News/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.arat.Composit-News";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8095A58825E6F38B0090DD18 /* Build configuration list for PBXProject "Composit News" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8095A59F25E6F38C0090DD18 /* Debug */,
+				8095A5A025E6F38C0090DD18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8095A5A125E6F38C0090DD18 /* Build configuration list for PBXNativeTarget "Composit News" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8095A5A225E6F38C0090DD18 /* Debug */,
+				8095A5A325E6F38C0090DD18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8095A5A625E6F4330090DD18 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.0;
+			};
+		};
+		8095A5AA25E6F4400090DD18 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8095A5A725E6F4330090DD18 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8095A5A625E6F4330090DD18 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		8095A5AB25E6F4400090DD18 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8095A5AA25E6F4400090DD18 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8095A58525E6F38B0090DD18 /* Project object */;
+}
