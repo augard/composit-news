@@ -48,9 +48,16 @@ final class ArticlesViewController: BaseViewController<ArticlesState, ArticlesAc
         viewStore.publisher.alertData
             .sink { [weak self] alertData in
                 guard let self = self, let alertData = alertData else { return }
-                self.showAlert(title: alertData.title, message: alertData.message ?? "") { [weak self] in
-                    self?.viewStore.send(.alertDismissed)
-                }
+                self.showActionAlert(
+                    title: alertData.title,
+                    message: alertData.message ?? "",
+                    okTitle: "Retry",
+                    okHandler: { [weak self] in
+                        self?.viewStore.send(self?.articles.isEmpty == true ? .display : .refresh)
+                    }, cancelHandler: { [weak self] in
+                        self?.viewStore.send(.alertDismissed)
+                    }
+                )
             }
             .store(in: &cancellables)
     }

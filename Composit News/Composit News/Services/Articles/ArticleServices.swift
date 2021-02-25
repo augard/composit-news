@@ -25,8 +25,11 @@ extension ArticleService {
             articles: {
                 .future { callback in
                     if reachability.connection == .unavailable {
-                        let articles = try? articleCache.fetch()
-                        callback(.success(Articles(articles: articles ?? [])))
+                        do {
+                            callback(.success(Articles(articles: try articleCache.fetch())))
+                        } catch {
+                            callback(.failure(ResponseError.other(error)))
+                        }
                     } else {
                         articleAPI.fetchArticles().sink { result in
                             switch result {
