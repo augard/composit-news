@@ -21,7 +21,7 @@ final class ArticleTableViewCell: UITableViewCell {
 
     @Published var picture = UIImage() {
         didSet {
-            pictureImageView.image = picture.resize(toWidth: pictureImageView.frame.width)
+            pictureImageView.image = picture.resize(toHeight: pictureImageView.superview?.frame.height ?? 96)
         }
     }
 
@@ -38,16 +38,17 @@ final class ArticleTableViewCell: UITableViewCell {
             $0.topMargin.bottomMargin.equalToSuperview()
         }
 
-        let pictureView = UIView()
-        pictureView.backgroundColor = .tertiarySystemGroupedBackground
-        pictureView.layer.cornerRadius = 6
-        pictureView.layer.masksToBounds = true
-        mainStack.addArrangedSubview(pictureView)
+        let pictureBorderView = UIView()
+        mainStack.addArrangedSubview(pictureBorderView)
 
+        pictureImageView.backgroundColor = .tertiarySystemGroupedBackground
+        pictureImageView.layer.cornerRadius = 6
+        pictureImageView.layer.masksToBounds = true
         pictureImageView.contentMode = .scaleAspectFill
-        pictureView.addSubview(pictureImageView)
+        pictureBorderView.addSubview(pictureImageView)
         pictureImageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.left.right.equalToSuperview()
+            $0.bottom.lessThanOrEqualToSuperview()
             $0.width.height.equalTo(96)
         }
 

@@ -13,7 +13,12 @@ struct ArticlesState: Equatable {
 
     var articles: [Article] = []
     var remoteImages: [Article: RemoteImage] = [:]
-    var dateFormatter = DateFormatter()
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter
+    }
 
     var isRequestInFlight: Bool = false
     var isRefreshing: Bool = false

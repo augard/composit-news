@@ -88,13 +88,7 @@ extension ArticlesViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.identifier, for: indexPath) as? ArticleTableViewCell else {
             return UITableViewCell()
         }
-
-        var bodyParts: [String?] = []
-        bodyParts.append(article.articleDescription)
-        bodyParts.append(article.author)
-        bodyParts.append(article.source)
-
-        cell.setup(with: article.title, body: bodyParts.compactMap { $0 }.joined(separator: "\n\n"), date: viewStore.dateFormatter.string(from: article.date))
+        cell.setup(with: article.title, body: article.source, date: viewStore.dateFormatter.string(from: article.date))
         viewStore.send(.loadArticleImage(article, cell))
         return cell
     }
