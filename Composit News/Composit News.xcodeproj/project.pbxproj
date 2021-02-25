@@ -203,8 +203,8 @@
 			children = (
 				8095A5E025E6F9200090DD18 /* Swift.Error.swift */,
 				80EB5F9B25E81D1C00599CC8 /* Image.swift */,
-				8095A5FA25E701080090DD18 /* ComposibleController.swift */,
 				8095A67125E7AFE70090DD18 /* ViewController.swift */,
+				8095A5FA25E701080090DD18 /* ComposibleController.swift */,
 				8095A5F725E700F70090DD18 /* BaseViewController.swift */,
 			);
 			path = Extensions;

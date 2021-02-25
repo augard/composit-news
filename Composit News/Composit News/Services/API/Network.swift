@@ -20,7 +20,7 @@ protocol Networking: class {
 
 }
 
-class Network: Networking {
+final class Network: Networking {
 
     // MARK: - Networking
 
