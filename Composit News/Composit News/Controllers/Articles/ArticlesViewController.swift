@@ -14,17 +14,19 @@ final class ArticlesViewController: BaseViewController<ArticlesState, ArticlesAc
 
     private var tableView = UITableView(frame: .zero, style: .insetGrouped)
 
+    private var articles: [Article] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.dataSource = self
-        tableView.delegate = self
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints {
-            $0.top.left.right.bottom.equalToSuperview()
-        }
-
         setupLayout()
+
+        viewStore.publisher.articles
+            .sink { [weak self] articles in
+                guard !articles.isEmpty else { return }
+                self?.setupContent(articles)
+            }
+            .store(in: &cancellables)
 
         viewStore.publisher.isRequestInFlight
             .sink { [weak self] isRequestInFlight in
@@ -55,11 +57,6 @@ final class ArticlesViewController: BaseViewController<ArticlesState, ArticlesAc
         super.viewWillAppear(animated)
 
         viewStore.send(.display)
-        viewStore.publisher.articles
-            .sink { [weak self] _ in
-                self?.tableView.reloadData()
-            }
-            .store(in: &cancellables)
     }
 
     // MARK: - Actions
@@ -77,11 +74,11 @@ final class ArticlesViewController: BaseViewController<ArticlesState, ArticlesAc
 extension ArticlesViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewStore.articles.count
+        articles.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let article = viewStore.articles[indexPath.row]
+        let article = articles[indexPath.row]
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "id")
         cell.textLabel?.text = article.title
         cell.detailTextLabel?.text = article.articleDescription
@@ -98,7 +95,7 @@ extension ArticlesViewController: UITableViewDelegate {
                 tableView.deselectRow(at: indexPath, animated: true)
             }
         }
-        toArticle(viewStore.articles[indexPath.row])
+        toArticle(articles[indexPath.row])
     }
 
 }
@@ -106,11 +103,22 @@ extension ArticlesViewController: UITableViewDelegate {
 private extension ArticlesViewController {
 
     func setupLayout() {
-        title = "News"
+        title = "Latest News"
 
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.separatorStyle = .none
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints {
+            $0.top.left.right.bottom.equalToSuperview()
+        }
 
         setupRefreshControl()
+    }
+
+    func setupContent(_ articles: [Article]) {
+        self.articles = articles
+        tableView.reloadData()
     }
 
     func setupRefreshControl() {

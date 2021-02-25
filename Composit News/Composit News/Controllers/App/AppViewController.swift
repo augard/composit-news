@@ -12,7 +12,7 @@ final class AppViewController: BaseViewController<AppState, AppAction> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.systemBlue
+        view.backgroundColor = UIColor.systemGroupedBackground
 
         store.scope(state: \.main, action: AppAction.displayMain)
             .ifLet { [weak self] store in
