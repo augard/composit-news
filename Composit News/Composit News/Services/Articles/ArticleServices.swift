@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import Reachability
+import Combine
 import ComposableArchitecture
+
+private var ArticleCancellables: [AnyCancellable] = []
 
 struct ArticleService {
 
@@ -16,10 +20,27 @@ struct ArticleService {
 
 extension ArticleService {
 
-    static func live(articleAPI: APIArticleServicing) -> ArticleService {
+    static func live(articleAPI: APIArticleServicing, articleCache: ArticleCaching, reachability: Reachability) -> ArticleService {
         return ArticleService(
             articles: {
-                articleAPI.fetchArticles()
+                .future { callback in
+                    if reachability.connection == .unavailable {
+                        let articles = try? articleCache.fetch()
+                        callback(.success(Articles(articles: articles ?? [])))
+                    } else {
+                        articleAPI.fetchArticles().sink { result in
+                            switch result {
+                            case .finished:
+                                break
+                            case let .failure(error):
+                                callback(.failure(error))
+                            }
+                        } receiveValue: { result in
+                            try? articleCache.store(result.articles)
+                            callback(.success(result))
+                        }.store(in: &ArticleCancellables)
+                    }
+                }
             }
         )
     }

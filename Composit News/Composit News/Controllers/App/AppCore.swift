@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import GRDB
+import Reachability
 import Combine
 import ComposableArchitecture
 
@@ -24,10 +26,12 @@ enum AppAction: Equatable {
 struct AppEnvironment {
 
     let mainQueue: AnySchedulerOf<DispatchQueue>
-
+    let databaseQueue: DatabaseQueue
     let network: Networking
-    let articleAPI: APIArticleServicing
+    let reachability: Reachability
 
+    let articleAPI: APIArticleServicing
+    let articleCache: ArticleCaching
     let articleService: ArticleService
 
 }
