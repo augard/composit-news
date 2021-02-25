@@ -7,14 +7,27 @@
 
 import UIKit
 
-class AppViewController: BaseViewController<AppState, AppAction> {
+final class AppViewController: BaseViewController<AppState, AppAction> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.systemBlue
 
-        viewStore.send(.displayMain(.init()))
+        store.scope(state: \.main, action: AppAction.displayMain)
+            .ifLet { [weak self] store in
+                let controller = MainViewController(store: store)
+                controller.modalPresentationStyle = .fullScreen
+                controller.modalTransitionStyle = .crossDissolve
+                self?.present(controller, animated: true)
+            }
+            .store(in: &cancellables)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        viewStore.send(.displayMain(.display))
     }
 
 }
