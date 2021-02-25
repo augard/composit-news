@@ -11,12 +11,12 @@ struct Articles: Decodable, Equatable {
     let articles: [Article]
 }
 
-struct Article: Decodable, Equatable {
+struct Article: Decodable, Equatable, Hashable {
     let date: Date
     let title: String
     let articleDescription: String?
     let author: String?
     let url: URL
     let source: String
-    let image: String?
+    let image: URL?
 }

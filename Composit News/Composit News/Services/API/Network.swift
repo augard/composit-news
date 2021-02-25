@@ -16,7 +16,7 @@ protocol Networking: class {
     var session: URLSession { get }
     var decoder: JSONDecoder { get }
 
-    func doRequest<V>(request: Request) -> AnyPublisher<V, ResponseError> where V: Decodable
+    func doRequest<V>(request: Requsting) -> AnyPublisher<V, ResponseError> where V: Decodable
 
 }
 
@@ -41,7 +41,7 @@ class Network: Networking {
         self.mainQueue = mainQueue
     }
 
-    func doRequest<V>(request: Request) -> AnyPublisher<V, ResponseError> where V: Decodable {
+    func doRequest<V>(request: Requsting) -> AnyPublisher<V, ResponseError> where V: Decodable {
         return Future<Response<V>, Error> { promise in
             let urlRequest: URLRequest
             do {

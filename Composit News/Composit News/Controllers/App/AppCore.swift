@@ -46,6 +46,6 @@ let AppReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer.combine(
     MainReducer.optional().pullback(
         state: \.main,
         action: /AppAction.displayMain,
-        environment: { MainEnvironment(mainQueue: $0.mainQueue, articleService: $0.articleService) }
+        environment: { MainEnvironment(mainQueue: $0.mainQueue, networking: $0.network, articleService: $0.articleService) }
     )
 )

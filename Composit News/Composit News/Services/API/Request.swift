@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct Request {
+protocol Requsting {
+
+    func asURLRequest() throws -> URLRequest
+
+}
+
+struct Request: Requsting {
 
     let router: Router
 
@@ -29,6 +35,24 @@ struct Request {
         }
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         urlRequest.httpMethod = router.method.rawValue
+        return urlRequest
+    }
+
+}
+
+struct RequestURL: Requsting {
+
+    let url: URL
+    let method: Router.Method
+
+    init(url: URL, method: Router.Method = .get) {
+        self.url = url
+        self.method = method
+    }
+
+    func asURLRequest() throws -> URLRequest {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = method.rawValue
         return urlRequest
     }
 

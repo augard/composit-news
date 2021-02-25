@@ -15,6 +15,7 @@ final class ArticlesViewController: BaseViewController<ArticlesState, ArticlesAc
     private var tableView = UITableView(frame: .zero, style: .insetGrouped)
 
     private var articles: [Article] = []
+    private var articleImages: [UUID: UIImage?] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,8 @@ final class ArticlesViewController: BaseViewController<ArticlesState, ArticlesAc
                 } else {
                     self?.tableView.refreshControl?.endRefreshing()
                 }
-            }.store(in: &cancellables)
+            }
+            .store(in: &cancellables)
 
         viewStore.publisher.alertData
             .sink { [weak self] alertData in
@@ -73,15 +75,27 @@ final class ArticlesViewController: BaseViewController<ArticlesState, ArticlesAc
 
 extension ArticlesViewController: UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         articles.count
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let article = articles[indexPath.row]
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "id")
-        cell.textLabel?.text = article.title
-        cell.detailTextLabel?.text = article.articleDescription
+        let article = articles[indexPath.section]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.identifier, for: indexPath) as? ArticleTableViewCell else {
+            return UITableViewCell()
+        }
+
+        var bodyParts: [String?] = []
+        bodyParts.append(article.articleDescription)
+        bodyParts.append(article.author)
+        bodyParts.append(article.source)
+
+        cell.setup(with: article.title, body: bodyParts.compactMap { $0 }.joined(separator: "\n\n"), date: viewStore.dateFormatter.string(from: article.date))
+        viewStore.send(.loadArticleImage(article, cell))
         return cell
     }
 
@@ -95,7 +109,11 @@ extension ArticlesViewController: UITableViewDelegate {
                 tableView.deselectRow(at: indexPath, animated: true)
             }
         }
-        toArticle(articles[indexPath.row])
+        toArticle(articles[indexPath.section])
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
     }
 
 }
@@ -105,6 +123,7 @@ private extension ArticlesViewController {
     func setupLayout() {
         title = "Latest News"
 
+        tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: ArticleTableViewCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none

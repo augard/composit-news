@@ -36,6 +36,9 @@
 		8095A66A25E7AE130090DD18 /* RequestID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A66925E7AE130090DD18 /* RequestID.swift */; };
 		8095A66F25E7AFDF0090DD18 /* AlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A66E25E7AFDF0090DD18 /* AlertData.swift */; };
 		8095A67225E7AFE70090DD18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095A67125E7AFE70090DD18 /* ViewController.swift */; };
+		80EB5F8C25E807B800599CC8 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB5F8B25E807B800599CC8 /* ArticleTableViewCell.swift */; };
+		80EB5F8F25E8087500599CC8 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB5F8E25E8087500599CC8 /* RemoteImage.swift */; };
+		80EB5F9C25E81D1C00599CC8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB5F9B25E81D1C00599CC8 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		8095A66925E7AE130090DD18 /* RequestID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestID.swift; sourceTree = "<group>"; };
 		8095A66E25E7AFDF0090DD18 /* AlertData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertData.swift; sourceTree = "<group>"; };
 		8095A67125E7AFE70090DD18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80EB5F8B25E807B800599CC8 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		80EB5F8E25E8087500599CC8 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		80EB5F9B25E81D1C00599CC8 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 			children = (
 				8095A5C125E6F5270090DD18 /* ArticlesCore.swift */,
 				8095A5C425E6F5300090DD18 /* ArticlesViewController.swift */,
+				80EB5F8B25E807B800599CC8 /* ArticleTableViewCell.swift */,
 				8095A5BB25E6F5130090DD18 /* ArticleDetailCore.swift */,
 				8095A5BE25E6F51F0090DD18 /* ArticleDetailViewController.swift */,
 			);
@@ -189,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				8095A5E025E6F9200090DD18 /* Swift.Error.swift */,
+				80EB5F9B25E81D1C00599CC8 /* Image.swift */,
 				8095A5FA25E701080090DD18 /* ComposibleController.swift */,
 				8095A67125E7AFE70090DD18 /* ViewController.swift */,
 				8095A5F725E700F70090DD18 /* BaseViewController.swift */,
@@ -210,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				8095A66E25E7AFDF0090DD18 /* AlertData.swift */,
+				80EB5F8E25E8087500599CC8 /* RemoteImage.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -301,10 +310,13 @@
 				8095A5CD25E6F5D30090DD18 /* Network.swift in Sources */,
 				8095A5F825E700F70090DD18 /* BaseViewController.swift in Sources */,
 				8095A59525E6F38B0090DD18 /* MainViewController.swift in Sources */,
+				80EB5F8F25E8087500599CC8 /* RemoteImage.swift in Sources */,
 				8095A5F425E700CF0090DD18 /* AppViewController.swift in Sources */,
 				8095A59125E6F38B0090DD18 /* AppDelegate.swift in Sources */,
+				80EB5F9C25E81D1C00599CC8 /* Image.swift in Sources */,
 				8095A5FB25E701080090DD18 /* ComposibleController.swift in Sources */,
 				8095A5BF25E6F51F0090DD18 /* ArticleDetailViewController.swift in Sources */,
+				80EB5F8C25E807B800599CC8 /* ArticleTableViewCell.swift in Sources */,
 				8095A5D825E6F89E0090DD18 /* Response.swift in Sources */,
 				8095A5C525E6F5300090DD18 /* ArticlesViewController.swift in Sources */,
 				8095A5F125E6FF1C0090DD18 /* ArticleServices.swift in Sources */,

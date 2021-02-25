@@ -27,6 +27,7 @@ enum MainAction: Equatable {
 struct MainEnvironment {
 
     let mainQueue: AnySchedulerOf<DispatchQueue>
+    let networking: Networking
     let articleService: ArticleService
 
 }
@@ -53,7 +54,7 @@ let MainReducer: Reducer<MainState, MainAction, MainEnvironment> = Reducer.combi
     ArticlesReducer.optional().pullback(
         state: \.articles,
         action: /MainAction.displayArticles,
-        environment: { ArticlesEnvironment(mainQueue: $0.mainQueue, articleService: $0.articleService) }
+        environment: { ArticlesEnvironment(mainQueue: $0.mainQueue, networking: $0.networking, articleService: $0.articleService) }
     ),
     ArticleDetailReducer.optional().pullback(
         state: \.articleDetail,
