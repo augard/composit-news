@@ -31,20 +31,6 @@ struct AppEnvironment {
 
     let articleService: ArticleService
 
-    init() {
-        mainQueue = DispatchQueue.main.eraseToAnyScheduler()
-        network = Network()
-        articleAPI = APIArticleService(network: network)
-        articleService = ArticleService.live(articleAPI: articleAPI)
-    }
-
-    init(mainQueue: AnySchedulerOf<DispatchQueue>, network: Networking, articleAPI: APIArticleServicing, articleService: ArticleService) {
-        self.mainQueue = mainQueue
-        self.network = network
-        self.articleAPI = articleAPI
-        self.articleService = articleService
-    }
-
 }
 
 let AppReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer.combine(

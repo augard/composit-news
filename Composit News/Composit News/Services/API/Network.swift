@@ -26,6 +26,8 @@ class Network: Networking {
 
     let session: URLSession
 
+    let mainQueue: AnySchedulerOf<DispatchQueue>
+
     var decoder: JSONDecoder {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.dateDecodingStrategy = .iso8601
@@ -34,8 +36,9 @@ class Network: Networking {
 
     private var cancellables: Set<AnyCancellable> = []
 
-    init() {
-        session = URLSession(configuration: .default)
+    init(mainQueue: AnySchedulerOf<DispatchQueue>) {
+        self.session = URLSession(configuration: .default)
+        self.mainQueue = mainQueue
     }
 
     func doRequest<V>(request: Request) -> AnyPublisher<V, ResponseError> where V: Decodable {
@@ -49,7 +52,6 @@ class Network: Networking {
             }
 
             self.session.dataTaskPublisher(for: urlRequest)
-                .receive(on: DispatchQueue.main)
                 .tryMap { output -> Data in
                     guard let response = output.response as? HTTPURLResponse else {
                         throw ResponseError.noData
@@ -73,14 +75,17 @@ class Network: Networking {
                     promise(.success(value))
                 })
                 .store(in: &self.cancellables)
-        }.tryCompactMap { response in
+        }
+        .receive(on: mainQueue)
+        .tryCompactMap { response in
             switch response.result {
             case let .success(value):
                 return value
             case let .failure(error):
                 throw error
             }
-        }.mapError { error in
+        }
+        .mapError { error in
             if let error = error as? ResponseError {
                 return error
             } else {
